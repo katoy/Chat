@@ -1,0 +1,27 @@
+<head>
+  <title>Chat</title>
+</head>
+
+<body>
+  {{> entry}}
+
+  {{> messages}}
+
+</body>
+
+<template name="entry">
+  <p>
+    <input type="text" id="name" placeholder="Your Name"></input>
+    <input type="text" id="messageBox" placeholder="Your Message"></input>
+  </p>
+</template>
+
+<template name="messages">
+  {{#each messages}}
+    {{> message}}
+  {{/each}}
+</template>
+
+<template name="message">
+  <p><strong>{{formatDate time}}:{{name}}:</strong> {{message}}</p>
+</template>
